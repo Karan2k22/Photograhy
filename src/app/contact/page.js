@@ -193,7 +193,7 @@ export default function ContactPage() {
                   animate={{ opacity: 1, scale: 1 }}
                   className="bg-green-900/30 border border-green-800 text-green-400 p-4 rounded-lg mb-6"
                 >
-                  Thank you for your message! We'll get back to you within 24 hours.
+                  Thank you for your message! We will get back to you within 24 hours.
                 </motion.div>
               ) : (
                 <form onSubmit={handleSubmit} className="space-y-6">

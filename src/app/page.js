@@ -372,7 +372,7 @@ const highlights = [
                   </svg>
                 ))}
               </div>
-              <p className="text-gray-300 mb-6 italic">"{testimonial.content}"</p>
+              <p className="text-gray-300 mb-6 italic">{testimonial.content}</p>
               <div>
                 <h4 className="text-white font-medium">{testimonial.name}</h4>
                 <p className="text-gray-400 text-sm">{testimonial.role}</p>
@@ -403,7 +403,7 @@ const highlights = [
         >
           <h2 className="text-3xl md:text-4xl font-bold mb-4">Ready to Capture Your Special Moments?</h2>
           <p className="text-gray-400 max-w-2xl mx-auto mb-8">
-            Let's create beautiful memories together. Book your session now or contact us for a personalized consultation.
+            Lets create beautiful memories together. Book your session now or contact us for a personalized consultation.
           </p>
           <div className="flex flex-col sm:flex-row justify-center gap-4">
             <motion.div whileHover={{ scale: 1.05 }} whileTap={{ scale: 0.95 }}>

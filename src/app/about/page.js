@@ -48,7 +48,7 @@ export default function AboutPage() {
                 Capturing <span className="text-gray-400">Moments</span>, Creating <span className="text-gray-400">Memories</span>
               </h1>
               <p className="text-gray-400 text-lg mb-8">
-                Welcome to LensCraft, where we transform fleeting moments into timeless art. Founded in 2012, we've been dedicated to telling stories through our lens with passion, creativity, and technical excellence.
+                Welcome to LensCraft, where we transform fleeting moments into timeless art. Founded in 2012, we ve been dedicated to telling stories through our lens with passion, creativity, and technical excellence.
               </p>
               <div className="flex flex-wrap gap-4">
                 <motion.div whileHover={{ scale: 1.05 }} whileTap={{ scale: 0.95 }}>
@@ -145,10 +145,10 @@ export default function AboutPage() {
                   Founded by award-winning photographer Jane Doe, LensCraft began as a small studio with big dreams. What started as a passion project has grown into one of the most sought-after photography studios in the region.
                 </p>
                 <p>
-                  We believe every moment has a story worth telling. Whether it's the nervous excitement before the wedding vows, the quiet connection between loved ones, or the proud showcase of a business's products - we capture the essence that makes each moment unique.
+                  We believe every moment has a story worth telling. Whether it is the nervous excitement before the wedding vows, the quiet connection between loved ones, or the proud showcase of a business products - we capture the essence that makes each moment unique.
                 </p>
                 <p>
-                  Over the years, we've had the privilege of working with thousands of clients, from celebrity weddings to small intimate gatherings, from global brands to local businesses. Each project receives the same level of dedication and artistic attention.
+                  Over the years, we will had the privilege of working with thousands of clients, from celebrity weddings to small intimate gatherings, from global brands to local businesses. Each project receives the same level of dedication and artistic attention.
                 </p>
               </div>
             </div>
@@ -244,7 +244,7 @@ export default function AboutPage() {
               Our <span className="text-gray-400">Specializations</span>
             </h2>
             <p className="text-gray-400 max-w-3xl mx-auto">
-              While we're versatile in many photography styles, these are our core specialties
+              While we are versatile in many photography styles, these are our core specialties
             </p>
           </motion.div>
 
@@ -278,7 +278,7 @@ export default function AboutPage() {
               Ready to <span className="text-gray-400">Create</span> Together?
             </h2>
             <p className="text-gray-400 max-w-2xl mx-auto mb-8">
-              Whether you're planning a wedding, need commercial photography, or want a personal portrait session, we'd love to hear about your vision.
+              Whether you are planning a wedding, need commercial photography, or want a personal portrait session, we did love to hear about your vision.
             </p>
             <motion.div whileHover={{ scale: 1.05 }} whileTap={{ scale: 0.95 }}>
               <a
