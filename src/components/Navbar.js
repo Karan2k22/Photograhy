@@ -118,7 +118,7 @@ export default function Navbar() {
           <Link href="/" className="relative h-8 w-32">
             <Image
               src="/logo/logo.png"
-              alt="LensCraft Logo"
+              alt="Dhansu Photography Logo"
               fill
               className="object-contain"
               priority

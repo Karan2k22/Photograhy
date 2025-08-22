@@ -71,14 +71,14 @@ export default function ContactPage() {
     {
       icon: <FaPhone className="text-2xl" />,
       title: 'Call Us',
-      info: '+1 (555) 123-4567',
-      action: 'tel:+15551234567'
+      info: '7008254188',
+      action: 'tel:+7008254188'
     },
     {
       icon: <FaEnvelope className="text-2xl" />,
       title: 'Email Us',
-      info: 'hello@lenscraft.com',
-      action: 'mailto:hello@lenscraft.com'
+      info: 'dhansukumar700@gmail.com ',
+      action: 'mailto:dhansukumar700@gmail.com '
     },
     {
       icon: <FaMapMarkerAlt className="text-2xl" />,

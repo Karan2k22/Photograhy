@@ -6,7 +6,7 @@ import Footer from '@/components/Footer'
 const inter = Inter({ subsets: ['latin'] })
 
 export const metadata = {
-  title: 'LensCraft | Capturing Timeless Moments',
+  title: 'Dhansu Photography | Capturing Timeless Moments',
   description: 'Professional photography services specializing in weddings, pre-wedding, post-wedding, makeup shoots, and more.',
 }
 

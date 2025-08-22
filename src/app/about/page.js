@@ -78,7 +78,7 @@ export default function AboutPage() {
             >
               <div className="relative aspect-square rounded-xl overflow-hidden">
                 <Image
-                  src="/about-hero.jpg"
+                  src="/street/1715967304268.jpg"
                   alt="Photographer at work"
                   fill
                   className="object-cover"
@@ -126,7 +126,7 @@ export default function AboutPage() {
             <div className="lg:w-1/2 relative">
               <div className="relative aspect-video rounded-xl overflow-hidden">
                 <Image
-                  src="/studio.jpg"
+                  src="/street/1710671175604.jpg"
                   alt="Our studio"
                   fill
                   className="object-cover"
