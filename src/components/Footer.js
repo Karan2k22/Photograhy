@@ -264,7 +264,7 @@ export default function Footer() {
               viewport={{ once: true }}
             >
               <Link href="/" className="text-2xl font-bold block mb-4">
-                Lens<span className="text-gray-400">Craft</span>
+                 <span className="text-gray-400">Dhansu Photography</span>
               </Link>
               <p className="text-gray-400 mb-6">
                 Capturing timeless moments with artistic vision and technical excellence.

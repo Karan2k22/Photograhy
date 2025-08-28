@@ -53,21 +53,24 @@ const highlights = [
     title: 'Elegant Wedding Moments',
     category: 'Wedding',
      image: '/wedding/1694716301993.jpg',
-    description: 'Capturing the raw emotions and beautiful details of your special day'
+    description: 'Capturing the raw emotions and beautiful details of your special day',
+    slug :"wedding"
   },
   {
     id: 2,
     title: 'Romantic Pre-Wedding',
     category: 'Pre-Wedding',
     image: '/prewedding/DSC_0072.jpg',
-    description: 'Love stories told through creative compositions'
+    description: 'Love stories told through creative compositions',
+        slug :"prewedding"
   },
   {
     id: 3,
     title: 'Glamorous Makeup Shoots',
     category: 'Makeup',
     image: '/wedding/AK108892.jpg',
-    description: 'Showcasing artistry and beauty in every frame'
+    description: 'Showcasing artistry and beauty in every frame',
+        slug :"makeup"
   }
 ]
 
@@ -282,13 +285,13 @@ const highlights = [
           viewport={{ once: true }}
           className="text-center mb-16"
         >
-          <h2 className="text-3xl md:text-4xl font-bold mb-4">Portfolio <span className="text-gray-400">Highlights</span></h2>
+          <h2 className="text-3xl md:text-4xl font-bold mb-4"> <span className="text-gray-400">Portfolio Highlights</span></h2>
           <p className="text-gray-400 max-w-2xl mx-auto">
             A curated selection of our finest work across different photography styles
           </p>
         </motion.div>
 
-        <div className="grid grid-cols-1 lg:grid-cols-3 gap-8">
+        {/* <div className="grid grid-cols-1 lg:grid-cols-3 gap-8">
           {highlights.map((item, index) => (
             <motion.div
               key={item.id}
@@ -317,7 +320,41 @@ const highlights = [
               </div>
             </motion.div>
           ))}
+        </div> */}
+ 
+
+<div className="grid grid-cols-1 lg:grid-cols-3 gap-8">
+  {highlights.map((item, index) => (
+    <motion.div
+      key={item.id}
+      initial={{ opacity: 0, y: 30 }}
+      whileInView={{ opacity: 1, y: 0 }}
+      transition={{ delay: index * 0.1, duration: 0.5 }}
+      viewport={{ once: true }}
+      whileHover={{ y: -10 }}
+      className="group relative overflow-hidden rounded-xl cursor-pointer"
+    >
+      <Link href={`/portfolio/${item.slug}`} className="block h-full">
+        <div className="aspect-[4/5] relative">
+          <Image
+            src={item.image}
+            alt={item.title}
+            fill
+            className="object-cover transition-transform duration-500 group-hover:scale-105"
+          />
+          <div className="absolute inset-0 bg-gradient-to-t from-black/80 via-black/30 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
         </div>
+        <div className="absolute bottom-0 left-0 right-0 p-6 translate-y-10 group-hover:translate-y-0 transition-transform duration-300">
+          <span className="inline-block px-3 py-1 bg-white text-black text-sm rounded-full mb-2">
+            {item.category}
+          </span>
+          <h3 className="text-xl font-bold text-white mb-1">{item.title}</h3>
+          <p className="text-gray-300">{item.description}</p>
+        </div>
+      </Link>
+    </motion.div>
+  ))}
+</div>
 
         <motion.div
           initial={{ opacity: 0 }}
@@ -348,7 +385,7 @@ const highlights = [
           viewport={{ once: true }}
           className="text-center mb-16"
         >
-          <h2 className="text-3xl md:text-4xl font-bold mb-4">Client <span className="text-gray-400">Testimonials</span></h2>
+          <h2 className="text-3xl md:text-4xl font-bold mb-4"> <span className="text-gray-400">Client Testimonials</span></h2>
           <p className="text-gray-400 max-w-2xl mx-auto">
             Hear what our clients say about their experience working with us
           </p>
