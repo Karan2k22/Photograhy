@@ -404,7 +404,7 @@ export default function AboutPage() {
         Capturing <span className="text-gray-400">Moments</span>, Creating <span className="text-gray-400">Memories</span>
       </h1>
       <p className="text-gray-400 text-base md:text-lg mb-6 md:mb-8">
-        Welcome to LensCraft, where we transform fleeting moments into timeless art. Founded in 2012, we've been dedicated to telling stories through our lens with passion, creativity, and technical excellence.
+        Welcome to Dhansu Photography, where we transform fleeting moments into timeless art. Founded in 2012, we have been dedicated to telling stories through our lens with passion, creativity, and technical excellence.
       </p>
       <div className="flex flex-wrap gap-3 md:gap-4">
         <motion.div whileHover={{ scale: 1.05 }} whileTap={{ scale: 0.95 }}>
@@ -544,10 +544,10 @@ export default function AboutPage() {
           Founded by award-winning photographer Jane Doe, LensCraft began as a small studio with big dreams. What started as a passion project has grown into one of the most sought-after photography studios in the region.
         </p>
         <p>
-          We believe every moment has a story worth telling. Whether it's the nervous excitement before the wedding vows, the quiet connection between loved ones, or the proud showcase of a business products - we capture the essence that makes each moment unique.
+          We believe every moment has a story worth telling. Whether it is the nervous excitement before the wedding vows, the quiet connection between loved ones, or the proud showcase of a business products - we capture the essence that makes each moment unique.
         </p>
         <p>
-          Over the years, we've had the privilege of working with thousands of clients, from celebrity weddings to small intimate gatherings, from global brands to local businesses. Each project receives the same level of dedication and artistic attention.
+          Over the years, we have had the privilege of working with thousands of clients, from celebrity weddings to small intimate gatherings, from global brands to local businesses. Each project receives the same level of dedication and artistic attention.
         </p>
       </div>
     </div>
@@ -578,7 +578,7 @@ export default function AboutPage() {
               viewport={{ once: true }}
               className="bg-gray-900/50 border border-gray-800 rounded-xl p-6 md:p-8"
             >
-              <h3 className="text-lg md:text-xl font-bold text-white mb-3 md:mb-4">The LensCraft Philosophy</h3>
+              <h3 className="text-lg md:text-xl font-bold text-white mb-3 md:mb-4">The Dhansu Photography Philosophy</h3>
               <ul className="space-y-3 md:space-y-4 text-gray-400 text-sm md:text-base">
                 <li className="flex items-start">
                   <span className="text-white mr-2">•</span>

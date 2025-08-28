@@ -107,7 +107,7 @@ export default function ServicesPage() {
     },
     {
       question: 'Can I get raw/unedited photos?',
-      answer: 'We don\'t provide raw files as they don\'t represent our finished work, but we\'re happy to accommodate specific edit requests.'
+      answer: 'We don not provide raw files as they don not represent our finished work, but we are happy to accommodate specific edit requests.'
     }
   ]
 
