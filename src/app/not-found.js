@@ -12,7 +12,7 @@ export default function Custom404() {
       <nav className="container mx-auto px-4 py-6">
         <Link href="/" className="flex items-center gap-2 text-xl font-bold">
           <FaCamera className="text-red-500" />
-          <span>LensCraft</span>
+          <span>Dhansu Photography</span>
         </Link>
       </nav>
 
@@ -50,10 +50,10 @@ export default function Custom404() {
               className="w-full md:w-3/5 text-center md:text-left"
             >
               <h1 className="text-4xl md:text-5xl font-bold mb-4">
-                Looks like you're <span className="text-gray-400">lost in focus</span>
+                Looks like you are <span className="text-gray-400">lost in focus</span>
               </h1>
               <p className="text-gray-400 text-lg mb-8">
-                The page you're looking for seems to be out of frame or doesn't exist. Let's find a better view together.
+                The page you are looking for seems to be out of frame or doesn not exist. Lets find a better view together.
               </p>
 
               <div className="flex flex-col sm:flex-row gap-4 justify-center md:justify-start">
@@ -81,7 +81,7 @@ export default function Custom404() {
               <div className="mt-12 p-6 bg-gray-900/50 border border-gray-800 rounded-xl">
                 <h3 className="text-xl font-bold mb-3 flex items-center gap-2">
                   <FaSearch className="text-gray-400" />
-                  Can't find what you're looking for?
+                  Can not find what you are looking for?
                 </h3>
                 <p className="text-gray-400 mb-4">
                   Try exploring our portfolio or contact us directly for assistance.

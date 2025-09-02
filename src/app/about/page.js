@@ -642,7 +642,7 @@ export default function AboutPage() {
               Our <span className="text-gray-400">Specializations</span>
             </h2>
             <p className="text-gray-400 max-w-3xl mx-auto text-sm md:text-base px-4">
-              While we're versatile in many photography styles, these are our core specialties
+              While we are versatile in many photography styles, these are our core specialties
             </p>
           </motion.div>
 
@@ -676,7 +676,7 @@ export default function AboutPage() {
               Ready to <span className="text-gray-400">Create</span> Together?
             </h2>
             <p className="text-gray-400 max-w-2xl mx-auto mb-6 md:mb-8 text-sm md:text-base">
-              Whether you're planning a wedding, need commercial photography, or want a personal portrait session, we'd love to hear about your vision.
+              Whether you are planning a wedding, need commercial photography, or want a personal portrait session, we did love to hear about your vision.
             </p>
             <motion.div whileHover={{ scale: 1.05 }} whileTap={{ scale: 0.95 }}>
               <a
