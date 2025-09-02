@@ -288,16 +288,15 @@ export default function ContactPage() {
                   </motion.button>
                 </form>
               )}
-
+{/* 
               <div className="mt-8 border-t border-gray-800 pt-8">
                 <h3 className="font-medium text-white mb-4">Studio Location</h3>
                 <div className="aspect-video bg-gray-800 rounded-lg overflow-hidden">
-                  {/* Replace with your actual map embed */}
-                  <div className="w-full h-full flex items-center justify-center text-gray-400">
+                   <div className="w-full h-full flex items-center justify-center text-gray-400">
                     [Google Maps Embed Here]
                   </div>
                 </div>
-              </div>
+              </div> */}
             </div>
           </motion.div>
         </div>
