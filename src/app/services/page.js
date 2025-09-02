@@ -286,7 +286,7 @@ export default function ServicesPage() {
               Ready to <span className="text-gray-400">Create</span> With Us?
             </h2>
             <p className="text-gray-400 max-w-2xl mx-auto mb-8">
-              Whether you are planning a wedding, need commercial photography, or want a personal portrait session, we did love to hear about your vision.
+              Whether you are planning a wedding need commercial photography or want a personal portrait session we did love to hear about your vision.
             </p>
             <div className="flex flex-col sm:flex-row justify-center gap-4">
               <motion.div whileHover={{ scale: 1.05 }} whileTap={{ scale: 0.95 }}>
