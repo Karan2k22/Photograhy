@@ -1,108 +1,99 @@
-"use client";
+'use client'
 
-import { motion } from "framer-motion";
-import Image from "next/image";
-import { useState } from "react";
-import { FaHeart, FaArrowLeft, FaExpand, FaCompress } from "react-icons/fa";
+import { motion } from 'framer-motion'
+import Image from 'next/image'
+import Link from 'next/link'
+import { useState } from 'react'
+import { FaArrowLeft, FaExpand } from 'react-icons/fa'
+import Button from '@/components/Button'
 
 export default function IndianWeddingPage() {
-  const [expandedImage, setExpandedImage] = useState(null);
-  const [activeEvent, setActiveEvent] = useState("ring-ceremony");
+  const [expandedImage, setExpandedImage] = useState(null)
+  const [activeEvent, setActiveEvent] = useState('ring-ceremony')
 
   const events = [
     {
-      id: "ring-ceremony",
-      title: "Ring Ceremony",
+      id: 'ring-ceremony',
+      title: 'Ring Ceremony',
       description:
-        "The engagement ceremony where the couple exchanges rings, marking their formal commitment to each other.",
-      images: ["/haldi/haldi1.JPG", "/haldi/haldi2.JPG"],
+        'The engagement ceremony where the couple exchanges rings, marking their formal commitment to each other.',
+      images: ['/haldi/haldi1.JPG', '/haldi/haldi2.JPG'],
     },
     {
-      id: "haldi",
-      title: "Haldi Ceremony",
+      id: 'haldi',
+      title: 'Haldi Ceremony',
       description:
-        "A joyful pre-wedding ritual where turmeric paste is applied to the bride and groom for purification and blessings.",
-      images: [
-        "/haldi/haldi1.JPG",
-        "/haldi/haldi2.JPG",
-        "/haldi/haldi3.JPG",
-        "/haldi/haldi4.JPG",
-      ],
+        'A joyful pre-wedding ritual where turmeric paste is applied to the bride and groom for purification and blessings.',
+      images: ['/haldi/haldi1.JPG', '/haldi/haldi2.JPG', '/haldi/haldi3.JPG', '/haldi/haldi4.JPG'],
     },
     {
-      id: "mehndi",
-      title: "Mehndi Ceremony",
+      id: 'mehndi',
+      title: 'Mehndi Ceremony',
       description:
         "The celebration where intricate henna designs are applied to the bride's hands and feet, symbolizing beauty and spiritual awakening.",
-      images: ["/mehndi/mehndi1.jpg"],
+      images: ['/mehndi/mehndi1.jpg'],
     },
     {
-      id: "shaadi",
-      title: "Shaadi",
+      id: 'shaadi',
+      title: 'Shaadi',
       description:
-        "The main wedding ceremony where the couple takes their vows amidst sacred rituals and traditional customs.",
-      images: [
-        "/wedding/1694716301979.jpg",
-        "/wedding/DSC_1459.JPG",
-        "/wedding/DSC_1459.JPG",
-      ],
+        'The main wedding ceremony where the couple takes their vows amidst sacred rituals and traditional customs.',
+      images: ['/wedding/1694716301979.jpg', '/wedding/DSC_1459.JPG', '/wedding/1694716301993.jpg'],
     },
     {
-      id: "reception",
-      title: "Reception",
+      id: 'reception',
+      title: 'Reception',
       description:
-        "A grand celebration where the newly married couple is introduced to society with music, dance, and feasting.",
-      images: ["/wedding/shadi.JPG"],
+        'A grand celebration where the newly married couple is introduced to society with music, dance, and feasting.',
+      images: ['/wedding/shadi.JPG'],
     },
     {
-      id: "vidai",
-      title: "Vidai Ceremony",
+      id: 'vidai',
+      title: 'Vidai Ceremony',
       description:
-        "The emotional farewell where the bride leaves her parental home to start a new life with her husband.",
-      images: ["/wedding/DSC_1865.JPG"],
+        'The emotional farewell where the bride leaves her parental home to start a new life with her husband.',
+      images: ['/wedding/DSC_1865.JPG'],
     },
-  ];
+  ]
 
-  const currentEvent = events.find((event) => event.id === activeEvent);
+  const currentEvent = events.find((event) => event.id === activeEvent)
 
   return (
-    <div className="min-h-screen bg-black text-white pt-20 pb-16">
-      <div className="container mx-auto px-4">
-        {/* Header */}
+    <div className="min-h-screen bg-bg text-text pt-24 md:pt-28 pb-16">
+      <div className="container mx-auto px-4 md:px-8">
         <motion.div
-          initial={{ opacity: 0, y: -20 }}
+          initial={{ opacity: 0, y: -16 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.5 }}
-          className="flex items-center mb-8"
+          className="flex flex-col sm:flex-row sm:items-center gap-4 mb-10"
         >
-          <a
+          <Link
             href="/portfolio"
-            className="flex items-center text-gray-400 hover:text-white transition-colors mr-6"
+            className="inline-flex items-center text-muted hover:text-gold transition-colors min-h-11"
           >
             <FaArrowLeft className="mr-2" />
             Back
-          </a>
-          <h1 className="text-4xl md:text-5xl font-bold">
-            Indian <span className="text-gray-400">Wedding</span> Events
+          </Link>
+          <h1 className="font-serif text-3xl md:text-5xl">
+            Indian <span className="text-gold italic">Wedding</span> Events
           </h1>
         </motion.div>
 
-        {/* Event Navigation */}
         <motion.div
           initial={{ opacity: 0 }}
           animate={{ opacity: 1 }}
-          transition={{ delay: 0.2 }}
-          className="mb-12 overflow-x-auto"
+          transition={{ delay: 0.15 }}
+          className="mb-10 overflow-x-auto"
         >
           <div className="flex space-x-2 pb-4">
             {events.map((event) => (
               <button
                 key={event.id}
                 onClick={() => setActiveEvent(event.id)}
-                className={`px-4 py-2 rounded-full whitespace-nowrap transition-all ${
+                className={`px-4 py-2 min-h-11 rounded-full whitespace-nowrap text-sm transition-all ${
                   activeEvent === event.id
-                    ? "bg-white text-black"
-                    : "bg-gray-900 text-white hover:bg-gray-800"
+                    ? 'bg-gold text-bg'
+                    : 'bg-surface text-muted hover:text-text border border-gold/10'
                 }`}
               >
                 {event.title}
@@ -111,27 +102,23 @@ export default function IndianWeddingPage() {
           </div>
         </motion.div>
 
-        {/* Event Content */}
         <motion.div
           key={activeEvent}
-          initial={{ opacity: 0 }}
-          animate={{ opacity: 1 }}
-          transition={{ duration: 0.5 }}
+          initial={{ opacity: 0, y: 12 }}
+          animate={{ opacity: 1, y: 0 }}
+          transition={{ duration: 0.4 }}
           className="mb-12"
         >
-          <h2 className="text-3xl font-bold mb-4">{currentEvent.title}</h2>
-          <p className="text-gray-400 text-lg max-w-3xl mb-8">
-            {currentEvent.description}
-          </p>
+          <h2 className="font-serif text-3xl mb-3">{currentEvent.title}</h2>
+          <p className="text-muted text-base md:text-lg max-w-3xl mb-8">{currentEvent.description}</p>
 
-          {/* Image Grid */}
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
+          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4 md:gap-6">
             {currentEvent.images.map((image, index) => (
               <motion.div
-                key={index}
-                initial={{ opacity: 0, scale: 0.9 }}
+                key={image + index}
+                initial={{ opacity: 0, scale: 1.06 }}
                 animate={{ opacity: 1, scale: 1 }}
-                transition={{ delay: index * 0.1 }}
+                transition={{ delay: index * 0.08 }}
                 className="relative aspect-square rounded-xl overflow-hidden group cursor-pointer"
                 onClick={() => setExpandedImage(image)}
               >
@@ -139,7 +126,7 @@ export default function IndianWeddingPage() {
                   src={image}
                   alt={`${currentEvent.title} ${index + 1}`}
                   fill
-                  className="object-cover transition-transform duration-500 group-hover:scale-110"
+                  className="object-cover transition-transform duration-700 group-hover:scale-110"
                 />
                 <div className="absolute inset-0 bg-black/40 opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex items-center justify-center">
                   <FaExpand className="text-2xl text-white" />
@@ -149,27 +136,22 @@ export default function IndianWeddingPage() {
           </div>
         </motion.div>
 
-        {/* CTA Section */}
         <motion.div
           initial={{ opacity: 0, y: 20 }}
           animate={{ opacity: 1, y: 0 }}
-          transition={{ delay: 0.4 }}
-          className="bg-gradient-to-r from-gray-900 to-gray-800 rounded-xl p-8 text-center"
+          transition={{ delay: 0.3 }}
+          className="card-gold bg-surface border rounded-xl p-8 md:p-12 text-center"
         >
-          <h2 className="text-3xl font-bold mb-4">
-            Capture Your <span className="text-gray-400">Special Day</span>
+          <h2 className="font-serif text-3xl md:text-4xl mb-4">
+            Capture Your <span className="text-gold italic">Special Day</span>
           </h2>
-          <p className="text-gray-400 max-w-2xl mx-auto mb-6">
-            Let us help you preserve the beautiful moments of your Indian
-            wedding with our professional photography services.
+          <p className="text-muted max-w-2xl mx-auto mb-6">
+            Let us help you preserve the beautiful moments of your Indian wedding with our professional photography services.
           </p>
-          <button className="bg-white text-black px-6 py-3 rounded-full font-medium transition-all hover:bg-gray-200">
-            Book a Consultation
-          </button>
+          <Button href="/contact">Book a Consultation</Button>
         </motion.div>
       </div>
 
-      {/* Expanded Image Modal */}
       {expandedImage && (
         <div
           className="fixed inset-0 bg-black/90 z-50 flex items-center justify-center p-4"
@@ -184,14 +166,15 @@ export default function IndianWeddingPage() {
               className="object-contain max-h-[90vh] rounded-lg"
             />
             <button
-              className="absolute top-4 right-4 bg-black/50 text-white p-2 rounded-full hover:bg-black/70 transition-colors"
+              className="absolute top-4 right-4 bg-black/70 text-white p-2 rounded-full hover:text-white/70 w-11 h-11"
               onClick={() => setExpandedImage(null)}
+              aria-label="Close"
             >
-              <FaCompress className="text-xl" />
+              &times;
             </button>
           </div>
         </div>
       )}
     </div>
-  );
+  )
 }

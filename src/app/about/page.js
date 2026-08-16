@@ -1,380 +1,133 @@
-// 'use client'
-
-// import { motion } from 'framer-motion'
-// import Image from 'next/image'
-// import { FaCamera, FaAward, FaSmile, FaHeart } from 'react-icons/fa'
-// // import { GiLightningSpellCast } from 'react-icons/gi'
-
-// export default function AboutPage() {
-//   const stats = [
-//     { value: '500+', label: 'Projects Completed', icon: <FaCamera className="text-2xl" /> },
-//     { value: '100%', label: 'Client Satisfaction', icon: <FaSmile className="text-2xl" /> },
-//     { value: '50+', label: 'Awards Won', icon: <FaAward className="text-2xl" /> },
-//     { value: '10+', label: 'Years Experience', icon: <FaAward className="text-2xl" /> }
-//   ]
-
-//   const services = [
-//     {
-//       title: 'Wedding Photography',
-//       description: 'Capturing the raw emotions and beautiful details of your special day with a documentary approach combined with artistic flair.'
-//     },
-//     {
-//       title: 'Pre-Wedding Shoots',
-//       description: 'Creating romantic and creative sessions that tell your unique love story in breathtaking locations.'
-//     },
-//     {
-//       title: 'Commercial Photography',
-//       description: 'High-quality product and interior photography that elevates brands and showcases spaces in their best light.'
-//     },
-//     {
-//       title: 'Portrait Sessions',
-//       description: 'Professional portraits that capture personality and essence, perfect for models, professionals, and families.'
-//     }
-//   ]
-
-//   return (
-//     <div className="pt-24 pb-16 min-h-screen bg-black">
-//       <div className="container mx-auto px-4">
-//         {/* Hero Section */}
-//         <section className="mb-20">
-//           <div className="flex flex-col lg:flex-row items-center gap-12">
-//             <motion.div
-//               initial={{ opacity: 0, x: -20 }}
-//               animate={{ opacity: 1, x: 0 }}
-//               transition={{ duration: 0.6 }}
-//               className="lg:w-1/2"
-//             >
-//               <h1 className="text-4xl md:text-5xl font-bold mb-6">
-//                 Capturing <span className="text-gray-400">Moments</span>, Creating <span className="text-gray-400">Memories</span>
-//               </h1>
-//               <p className="text-gray-400 text-lg mb-8">
-//                 Welcome to LensCraft, where we transform fleeting moments into timeless art. Founded in 2012, we ve been dedicated to telling stories through our lens with passion, creativity, and technical excellence.
-//               </p>
-//               <div className="flex flex-wrap gap-4">
-//                 <motion.div whileHover={{ scale: 1.05 }} whileTap={{ scale: 0.95 }}>
-//                   <a
-//                     href="#story"
-//                     className="bg-white text-black px-6 py-3 rounded-full font-medium transition-all hover:bg-gray-200"
-//                   >
-//                     Our Story
-//                   </a>
-//                 </motion.div>
-//                 <motion.div whileHover={{ scale: 1.05 }} whileTap={{ scale: 0.95 }}>
-//                   <a
-//                     href="#approach"
-//                     className="border border-white text-white px-6 py-3 rounded-full font-medium transition-all hover:bg-white hover:text-black"
-//                   >
-//                     Our Approach
-//                   </a>
-//                 </motion.div>
-//               </div>
-//             </motion.div>
-
-//             <motion.div
-//               initial={{ opacity: 0, x: 20 }}
-//               animate={{ opacity: 1, x: 0 }}
-//               transition={{ duration: 0.6, delay: 0.2 }}
-//               className="lg:w-1/2 relative"
-//             >
-//               <div className="relative aspect-square rounded-xl overflow-hidden">
-//                 <Image
-//                   src="/street/1715967304268.jpg"
-//                   alt="Photographer at work"
-//                   fill
-//                   className="object-cover"
-//                 />
-//               </div>
-//               <div className="absolute -bottom-6 -right-6 bg-gray-900 border border-gray-800 p-4 rounded-xl w-1/2">
-//                 <FaHeart className="text-red-500 text-3xl mb-2" />
-//                 <p className="text-white font-medium">Passionate about storytelling since 2012</p>
-//               </div>
-//             </motion.div>
-//           </div>
-//         </section>
-
-//         {/* Stats Section */}
-//         <section className="py-12 bg-gray-900 rounded-xl mb-20">
-//           <div className="grid grid-cols-2 md:grid-cols-4 gap-8">
-//             {stats.map((stat, index) => (
-//               <motion.div
-//                 key={index}
-//                 initial={{ opacity: 0, y: 20 }}
-//                 whileInView={{ opacity: 1, y: 0 }}
-//                 transition={{ delay: index * 0.1, duration: 0.5 }}
-//                 viewport={{ once: true }}
-//                 className="text-center p-4"
-//               >
-//                 <div className="text-gray-400 mb-3 flex justify-center">
-//                   {stat.icon}
-//                 </div>
-//                 <h3 className="text-3xl font-bold text-white mb-2">{stat.value}</h3>
-//                 <p className="text-gray-400">{stat.label}</p>
-//               </motion.div>
-//             ))}
-//           </div>
-//         </section>
-
-//         {/* Our Story Section */}
-//         <section id="story" className="mb-20">
-//           <motion.div
-//             initial={{ opacity: 0 }}
-//             whileInView={{ opacity: 1 }}
-//             transition={{ duration: 0.8 }}
-//             viewport={{ once: true }}
-//             className="flex flex-col lg:flex-row gap-12 items-center"
-//           >
-//             <div className="lg:w-1/2 relative">
-//               <div className="relative aspect-video rounded-xl overflow-hidden">
-//                 <Image
-//                   src="/street/1710671175604.jpg"
-//                   alt="Our studio"
-//                   fill
-//                   className="object-cover"
-//                 />
-//               </div>
-//               <div className="absolute -bottom-6 -left-6 bg-gray-900 border border-gray-800 p-4 rounded-xl w-1/2 z-10">
-//                 <p className="text-white font-medium">Our state-of-the-art studio in New York</p>
-//               </div>
-//             </div>
-//             <div className="lg:w-1/2">
-//               <h2 className="text-3xl md:text-4xl font-bold mb-6">
-//                 Our <span className="text-gray-400">Story</span>
-//               </h2>
-//               <div className="space-y-4 text-gray-400">
-//                 <p>
-//                   Founded by award-winning photographer Jane Doe, LensCraft began as a small studio with big dreams. What started as a passion project has grown into one of the most sought-after photography studios in the region.
-//                 </p>
-//                 <p>
-//                   We believe every moment has a story worth telling. Whether it is the nervous excitement before the wedding vows, the quiet connection between loved ones, or the proud showcase of a business products - we capture the essence that makes each moment unique.
-//                 </p>
-//                 <p>
-//                   Over the years, we will had the privilege of working with thousands of clients, from celebrity weddings to small intimate gatherings, from global brands to local businesses. Each project receives the same level of dedication and artistic attention.
-//                 </p>
-//               </div>
-//             </div>
-//           </motion.div>
-//         </section>
-
-//         {/* Our Approach Section */}
-//         <section id="approach" className="mb-20">
-//           <motion.div
-//             initial={{ opacity: 0 }}
-//             whileInView={{ opacity: 1 }}
-//             transition={{ duration: 0.8 }}
-//             viewport={{ once: true }}
-//             className="text-center mb-12"
-//           >
-//             <h2 className="text-3xl md:text-4xl font-bold mb-4">
-//               Our <span className="text-gray-400">Approach</span>
-//             </h2>
-//             <p className="text-gray-400 max-w-3xl mx-auto">
-//               We combine technical expertise with artistic vision to create images that stand the test of time
-//             </p>
-//           </motion.div>
-
-//           <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
-//             <motion.div
-//               initial={{ opacity: 0, y: 20 }}
-//               whileInView={{ opacity: 1, y: 0 }}
-//               transition={{ duration: 0.5 }}
-//               viewport={{ once: true }}
-//               className="bg-gray-900/50 border border-gray-800 rounded-xl p-8"
-//             >
-//               <h3 className="text-xl font-bold text-white mb-4">The LensCraft Philosophy</h3>
-//               <ul className="space-y-4 text-gray-400">
-//                 <li className="flex items-start">
-//                   <span className="text-white mr-2">•</span>
-//                   <span>Authenticity over perfection - we capture real moments and emotions</span>
-//                 </li>
-//                 <li className="flex items-start">
-//                   <span className="text-white mr-2">•</span>
-//                   <span>Every client receives personalized attention and customized solutions</span>
-//                 </li>
-//                 <li className="flex items-start">
-//                   <span className="text-white mr-2">•</span>
-//                   <span>We invest in the highest quality equipment and continuous education</span>
-//                 </li>
-//                 <li className="flex items-start">
-//                   <span className="text-white mr-2">•</span>
-//                   <span>Ethical business practices with transparent pricing</span>
-//                 </li>
-//               </ul>
-//             </motion.div>
-
-//             <motion.div
-//               initial={{ opacity: 0, y: 20 }}
-//               whileInView={{ opacity: 1, y: 0 }}
-//               transition={{ duration: 0.5, delay: 0.2 }}
-//               viewport={{ once: true }}
-//               className="bg-gray-900/50 border border-gray-800 rounded-xl p-8"
-//             >
-//               <h3 className="text-xl font-bold text-white mb-4">The Process</h3>
-//               <ol className="space-y-6 text-gray-400">
-//                 <li className="flex items-start">
-//                   <span className="text-white font-medium mr-3">1.</span>
-//                   <span>Consultation - We listen to understand your vision and needs</span>
-//                 </li>
-//                 <li className="flex items-start">
-//                   <span className="text-white font-medium mr-3">2.</span>
-//                   <span>Planning - Location scouting, styling, and timeline creation</span>
-//                 </li>
-//                 <li className="flex items-start">
-//                   <span className="text-white font-medium mr-3">3.</span>
-//                   <span>Shoot Day - Relaxed, professional session tailored to you</span>
-//                 </li>
-//                 <li className="flex items-start">
-//                   <span className="text-white font-medium mr-3">4.</span>
-//                   <span>Delivery - Carefully edited images delivered in your preferred format</span>
-//                 </li>
-//               </ol>
-//             </motion.div>
-//           </div>
-//         </section>
-
-//         {/* Services Overview */}
-//         <section className="mb-20">
-//           <motion.div
-//             initial={{ opacity: 0 }}
-//             whileInView={{ opacity: 1 }}
-//             transition={{ duration: 0.8 }}
-//             viewport={{ once: true }}
-//             className="text-center mb-12"
-//           >
-//             <h2 className="text-3xl md:text-4xl font-bold mb-4">
-//               Our <span className="text-gray-400">Specializations</span>
-//             </h2>
-//             <p className="text-gray-400 max-w-3xl mx-auto">
-//               While we are versatile in many photography styles, these are our core specialties
-//             </p>
-//           </motion.div>
-
-//           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
-//             {services.map((service, index) => (
-//               <motion.div
-//                 key={index}
-//                 initial={{ opacity: 0, y: 20 }}
-//                 whileInView={{ opacity: 1, y: 0 }}
-//                 transition={{ delay: index * 0.1, duration: 0.5 }}
-//                 viewport={{ once: true }}
-//                 whileHover={{ y: -10 }}
-//                 className="bg-gray-900 border border-gray-800 rounded-xl p-6 hover:border-gray-600 transition-all"
-//               >
-//                 <h3 className="text-xl font-bold text-white mb-3">{service.title}</h3>
-//                 <p className="text-gray-400">{service.description}</p>
-//               </motion.div>
-//             ))}
-//           </div>
-//         </section>
-
-//         {/* Team CTA */}
-//         <section className="bg-gradient-to-r from-gray-900 to-gray-800 rounded-xl p-12 text-center">
-//           <motion.div
-//             initial={{ opacity: 0, scale: 0.9 }}
-//             whileInView={{ opacity: 1, scale: 1 }}
-//             transition={{ duration: 0.6 }}
-//             viewport={{ once: true }}
-//           >
-//             <h2 className="text-3xl md:text-4xl font-bold mb-6">
-//               Ready to <span className="text-gray-400">Create</span> Together?
-//             </h2>
-//             <p className="text-gray-400 max-w-2xl mx-auto mb-8">
-//               Whether you are planning a wedding, need commercial photography, or want a personal portrait session, we did love to hear about your vision.
-//             </p>
-//             <motion.div whileHover={{ scale: 1.05 }} whileTap={{ scale: 0.95 }}>
-//               <a
-//                 href="/contact"
-//                 className="inline-block bg-white text-black px-8 py-3 rounded-full font-medium transition-all hover:bg-gray-200"
-//               >
-//                 Get in Touch
-//               </a>
-//             </motion.div>
-//           </motion.div>
-//         </section>
-//       </div>
-//     </div>
-//   )
-// }
-
-
 'use client'
 
 import { motion } from 'framer-motion'
 import Image from 'next/image'
-import { FaCamera, FaAward, FaSmile, FaHeart } from 'react-icons/fa'
+import {
+  FaBriefcase,
+  FaCamera,
+  FaCheck,
+  FaClipboardList,
+  FaComments,
+  FaHeart,
+  FaMapMarkerAlt,
+  FaUser,
+} from 'react-icons/fa'
+import PageHero from '@/components/PageHero'
+import { SectionHeader } from '@/components/AnimatedSection'
+import Button from '@/components/Button'
+import CountUp from '@/components/CountUp'
+
+const ease = [0.22, 1, 0.36, 1]
+const cardClass =
+  'card-gold group relative overflow-hidden bg-surface/80 border rounded-2xl transition-transform duration-500 hover:-translate-y-2'
+
+function GoldLine() {
+  return (
+    <div className="absolute inset-x-0 top-0 h-px bg-gradient-to-r from-transparent via-gold/60 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500" />
+  )
+}
+
+function IconBadge({ children }) {
+  return (
+    <motion.div
+      whileHover={{ rotate: 8, scale: 1.06 }}
+      className="w-12 h-12 md:w-14 md:h-14 rounded-full border border-gold/25 bg-bg flex items-center justify-center text-gold shrink-0"
+    >
+      {children}
+    </motion.div>
+  )
+}
 
 export default function AboutPage() {
   const stats = [
-    { value: '500+', label: 'Projects Completed', icon: <FaCamera className="text-xl md:text-2xl" /> },
-    { value: '100%', label: 'Client Satisfaction', icon: <FaSmile className="text-xl md:text-2xl" /> },
-    { value: '50+', label: 'Awards Won', icon: <FaAward className="text-xl md:text-2xl" /> },
-    { value: '10+', label: 'Years Experience', icon: <FaAward className="text-xl md:text-2xl" /> }
+    { value: '7+', label: 'Years Behind the Lens', icon: <FaCamera className="text-lg md:text-xl" /> },
+    { value: '250+', label: 'Weddings Captured', icon: <FaHeart className="text-lg md:text-xl" /> },
+    { value: '40+', label: 'Cities Photographed', icon: <FaMapMarkerAlt className="text-lg md:text-xl" /> },
+    { value: '90+', label: 'Portrait Sessions', icon: <FaUser className="text-lg md:text-xl" /> },
   ]
 
-  const services = [
+  const philosophy = [
+    'Authenticity over perfection — we capture real moments and emotions',
+    'Every client receives personalized attention and customized solutions',
+    'We invest in the highest quality equipment and continuous education',
+    'Ethical business practices with transparent pricing',
+  ]
+
+  const process = [
+    { title: 'Consultation', text: 'We listen to understand your vision and needs' },
+    { title: 'Planning', text: 'Location scouting, styling, and timeline creation' },
+    { title: 'Shoot Day', text: 'Relaxed, professional session tailored to you' },
+    { title: 'Delivery', text: 'Carefully edited images delivered in your preferred format' },
+  ]
+
+  const specialties = [
     {
       title: 'Wedding Photography',
-      description: 'Capturing the raw emotions and beautiful details of your special day with a documentary approach combined with artistic flair.'
+      description:
+        'Capturing the raw emotions and beautiful details of your special day with a documentary approach combined with artistic flair.',
+      icon: <FaHeart className="text-xl" />,
     },
     {
       title: 'Pre-Wedding Shoots',
-      description: 'Creating romantic and creative sessions that tell your unique love story in breathtaking locations.'
+      description:
+        'Creating romantic and creative sessions that tell your unique love story in breathtaking locations.',
+      icon: <FaCamera className="text-xl" />,
     },
     {
       title: 'Commercial Photography',
-      description: 'High-quality product and interior photography that elevates brands and showcases spaces in their best light.'
+      description:
+        'High-quality product and interior photography that elevates brands and showcases spaces in their best light.',
+      icon: <FaBriefcase className="text-xl" />,
     },
     {
       title: 'Portrait Sessions',
-      description: 'Professional portraits that capture personality and essence, perfect for models, professionals, and families.'
-    }
+      description:
+        'Professional portraits that capture personality and essence, perfect for models, professionals, and families.',
+      icon: <FaUser className="text-xl" />,
+    },
   ]
 
-   
   return (
-    <div className="pt-20 md:pt-24 pb-12 md:pb-16 min-h-screen bg-black">
-      <div className="container mx-auto px-4 md:px-6">
-        {/* Hero Section */}
-        {/* <section className="mb-16 md:mb-20">
-          <div className="flex flex-col lg:flex-row items-center gap-8 md:gap-12">
+    <div className="pb-16 md:pb-24 min-h-screen bg-bg">
+      <PageHero
+        eyebrow="Our Story"
+        title="Capturing Moments, Creating Memories"
+        highlight="Moments"
+        subtitle="Welcome to Dhansu Photography, where we transform fleeting moments into timeless art."
+      />
+
+      <div className="container mx-auto px-4 md:px-8">
+        <section className="mb-16 md:mb-24">
+          <div className="flex flex-col lg:flex-row items-center gap-10 md:gap-16">
             <motion.div
-              initial={{ opacity: 0, x: -20 }}
-              animate={{ opacity: 1, x: 0 }}
-              transition={{ duration: 0.6 }}
-              className="lg:w-1/2"
+              initial={{ opacity: 0, x: -24 }}
+              whileInView={{ opacity: 1, x: 0 }}
+              viewport={{ once: true }}
+              transition={{ duration: 0.6, ease }}
+              className="w-full lg:w-1/2"
             >
-              <h1 className="text-3xl sm:text-4xl md:text-5xl font-bold mb-4 md:mb-6">
-                Capturing <span className="text-gray-400">Moments</span>, Creating <span className="text-gray-400">Memories</span>
-              </h1>
-              <p className="text-gray-400 text-base md:text-lg mb-6 md:mb-8">
-                Welcome to LensCraft, where we transform fleeting moments into timeless art. Founded in 2012, we've been dedicated to telling stories through our lens with passion, creativity, and technical excellence.
+              <h2 className="font-serif text-3xl md:text-4xl mb-5">
+                Dedicated to <span className="text-gold italic">storytelling</span> since 2020
+              </h2>
+              <p className="text-muted text-base md:text-lg mb-8 leading-relaxed">
+                Founded in 2020, we have been dedicated to telling stories through our lens with passion, creativity, and technical excellence.
               </p>
-              <div className="flex flex-wrap gap-3 md:gap-4">
-                <motion.div whileHover={{ scale: 1.05 }} whileTap={{ scale: 0.95 }}>
-                  <a
-                    href="#story"
-                    className="bg-white text-black px-5 py-2.5 md:px-6 md:py-3 rounded-full font-medium transition-all hover:bg-gray-200 text-sm md:text-base"
-                  >
-                    Our Story
-                  </a>
-                </motion.div>
-                <motion.div whileHover={{ scale: 1.05 }} whileTap={{ scale: 0.95 }}>
-                  <a
-                    href="#approach"
-                    className="border border-white text-white px-5 py-2.5 md:px-6 md:py-3 rounded-full font-medium transition-all hover:bg-white hover:text-black text-sm md:text-base"
-                  >
-                    Our Approach
-                  </a>
-                </motion.div>
+              <div className="flex flex-wrap gap-4">
+                <Button href="#story">Our Story</Button>
+                <Button href="#approach" variant="outline">
+                  Our Approach
+                </Button>
               </div>
             </motion.div>
 
             <motion.div
-              initial={{ opacity: 0, x: 20 }}
-              animate={{ opacity: 1, x: 0 }}
-              transition={{ duration: 0.6, delay: 0.2 }}
-              className="lg:w-1/2 relative mt-8 lg:mt-0"
+              initial={{ opacity: 0, x: 24 }}
+              whileInView={{ opacity: 1, x: 0 }}
+              viewport={{ once: true }}
+              transition={{ duration: 0.6, delay: 0.15, ease }}
+              className="w-full lg:w-1/2 relative"
             >
-              <div className="relative aspect-square rounded-xl overflow-hidden">
+              <div className="relative aspect-square rounded-2xl overflow-hidden border border-gold/15">
                 <Image
                   src="/street/1715967304268.jpg"
                   alt="Photographer at work"
@@ -384,104 +137,54 @@ export default function AboutPage() {
                   sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw"
                 />
               </div>
-              <div className="absolute -bottom-4 -right-4 md:-bottom-6 md:-right-6 bg-gray-900 border border-gray-800 p-3 md:p-4 rounded-xl w-1/2 md:w-1/2">
-                <FaHeart className="text-red-500 text-2xl md:text-3xl mb-1 md:mb-2" />
-                <p className="text-white font-medium text-xs md:text-sm">Passionate about storytelling since 2012</p>
-              </div>
+              <motion.div
+                initial={{ opacity: 0, y: 16, scale: 0.96 }}
+                whileInView={{ opacity: 1, y: 0, scale: 1 }}
+                viewport={{ once: true }}
+                transition={{ delay: 0.4, duration: 0.55, ease }}
+                className="absolute -bottom-3 -right-2 md:-bottom-5 md:-right-4 bg-surface/95 backdrop-blur-sm border border-gold/25 p-3 md:p-4 rounded-2xl w-2/3 md:w-1/2 shadow-[0_12px_40px_rgba(0,0,0,0.45)]"
+              >
+                <FaHeart className="text-gold text-xl md:text-2xl mb-2" />
+                <p className="text-text font-medium text-xs md:text-sm">Passionate about storytelling since 2020</p>
+              </motion.div>
             </motion.div>
           </div>
-        </section> */}
+        </section>
 
-<section className="mb-16 md:mb-20">
-  <div className="flex flex-col lg:flex-row items-center gap-8 md:gap-12">
-    <motion.div
-      initial={{ opacity: 0, x: -20 }}
-      animate={{ opacity: 1, x: 0 }}
-      transition={{ duration: 0.6 }}
-      className="w-full lg:w-1/2"
-    >
-      <h1 className="text-3xl sm:text-4xl md:text-5xl font-bold mb-4 md:mb-6">
-        Capturing <span className="text-gray-400">Moments</span>, Creating <span className="text-gray-400">Memories</span>
-      </h1>
-      <p className="text-gray-400 text-base md:text-lg mb-6 md:mb-8">
-        Welcome to Dhansu Photography, where we transform fleeting moments into timeless art. Founded in 2012, we have been dedicated to telling stories through our lens with passion, creativity, and technical excellence.
-      </p>
-      <div className="flex flex-wrap gap-3 md:gap-4">
-        <motion.div whileHover={{ scale: 1.05 }} whileTap={{ scale: 0.95 }}>
-          <a
-            href="#story"
-            className="bg-white text-black px-5 py-2.5 md:px-6 md:py-3 rounded-full font-medium transition-all hover:bg-gray-200 text-sm md:text-base"
-          >
-            Our Story
-          </a>
-        </motion.div>
-        <motion.div whileHover={{ scale: 1.05 }} whileTap={{ scale: 0.95 }}>
-          <a
-            href="#approach"
-            className="border border-white text-white px-5 py-2.5 md:px-6 md:py-3 rounded-full font-medium transition-all hover:bg-white hover:text-black text-sm md:text-base"
-          >
-            Our Approach
-          </a>
-        </motion.div>
-      </div>
-    </motion.div>
-
-    <motion.div
-      initial={{ opacity: 0, x: 20 }}
-      animate={{ opacity: 1, x: 0 }}
-      transition={{ duration: 0.6, delay: 0.2 }}
-      className="w-full lg:w-1/2 relative mt-8 lg:mt-0"
-    >
-      <div className="relative aspect-square rounded-xl overflow-hidden">
-        <Image
-          src="/street/1715967304268.jpg"
-          alt="Photographer at work"
-          fill
-          className="object-cover"
-          priority
-          sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw"
-        />
-      </div>
-      <div className="absolute -bottom-3 -right-3 md:-bottom-4 md:-right-4 lg:-bottom-6 lg:-right-6 bg-gray-900 border border-gray-800 p-2 md:p-3 lg:p-4 rounded-xl w-2/3 md:w-1/2">
-        <FaHeart className="text-red-500 text-xl md:text-2xl lg:text-3xl mb-1 md:mb-2" />
-        <p className="text-white font-medium text-xs md:text-sm">Passionate about storytelling since 2012</p>
-      </div>
-    </motion.div>
-  </div>
-</section>
-        {/* Stats Section */}
-        <section className="py-8 md:py-12 bg-gray-900 rounded-xl mb-16 md:mb-20">
-          <div className="grid grid-cols-2 md:grid-cols-4 gap-6 md:gap-8">
+        <section className="mb-16 md:mb-24">
+          <div className="grid grid-cols-2 lg:grid-cols-4 gap-3 md:gap-5">
             {stats.map((stat, index) => (
               <motion.div
-                key={index}
-                initial={{ opacity: 0, y: 20 }}
+                key={stat.label}
+                initial={{ opacity: 0, y: 28 }}
                 whileInView={{ opacity: 1, y: 0 }}
-                transition={{ delay: index * 0.1, duration: 0.5 }}
+                transition={{ delay: index * 0.1, duration: 0.55, ease }}
                 viewport={{ once: true }}
-                className="text-center p-4"
+                className={`${cardClass} text-center px-4 py-6 md:p-8`}
               >
-                <div className="text-gray-400 mb-2 md:mb-3 flex justify-center">
-                  {stat.icon}
+                <GoldLine />
+                <div className="flex justify-center mb-4">
+                  <IconBadge>{stat.icon}</IconBadge>
                 </div>
-                <h3 className="text-2xl md:text-3xl font-bold text-white mb-1 md:mb-2">{stat.value}</h3>
-                <p className="text-gray-400 text-xs md:text-sm">{stat.label}</p>
+                <h3 className="font-serif text-3xl md:text-5xl text-gold mb-2">
+                  <CountUp value={stat.value} duration={4200} delay={index * 180} />
+                </h3>
+                <p className="text-muted text-xs md:text-sm tracking-wide">{stat.label}</p>
               </motion.div>
             ))}
           </div>
         </section>
 
-        {/* Our Story Section */}
-        {/* <section id="story" className="mb-16 md:mb-20">
-          <motion.div
-            initial={{ opacity: 0 }}
-            whileInView={{ opacity: 1 }}
-            transition={{ duration: 0.8 }}
-            viewport={{ once: true }}
-            className="flex flex-col lg:flex-row gap-8 md:gap-12 items-center"
-          >
-            <div className="lg:w-1/2 relative order-2 lg:order-1 mt-8 lg:mt-0">
-              <div className="relative aspect-video rounded-xl overflow-hidden">
+        <section id="story" className="mb-16 md:mb-24 scroll-mt-28">
+          <div className="flex flex-col lg:flex-row gap-8 md:gap-12 items-center">
+            <motion.div
+              initial={{ opacity: 0, x: -24 }}
+              whileInView={{ opacity: 1, x: 0 }}
+              viewport={{ once: true }}
+              transition={{ duration: 0.65, ease }}
+              className="w-full lg:w-1/2 relative order-2 lg:order-1"
+            >
+              <div className="relative aspect-square md:aspect-video rounded-2xl overflow-hidden border border-gold/15">
                 <Image
                   src="/street/1710671175604.jpg"
                   alt="Our studio"
@@ -490,204 +193,163 @@ export default function AboutPage() {
                   sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw"
                 />
               </div>
-              <div className="absolute -bottom-4 -left-4 md:-bottom-6 md:-left-6 bg-gray-900 border border-gray-800 p-3 md:p-4 rounded-xl w-2/3 md:w-1/2 z-10">
-                <p className="text-white font-medium text-xs md:text-sm">Our state-of-the-art studio in New York</p>
-              </div>
-            </div>
-            <div className="lg:w-1/2 order-1 lg:order-2">
-              <h2 className="text-2xl md:text-3xl lg:text-4xl font-bold mb-4 md:mb-6">
-                Our <span className="text-gray-400">Story</span>
+            </motion.div>
+            <motion.div
+              initial={{ opacity: 0, x: 24 }}
+              whileInView={{ opacity: 1, x: 0 }}
+              viewport={{ once: true }}
+              transition={{ duration: 0.65, delay: 0.12, ease }}
+              className="w-full lg:w-1/2 order-1 lg:order-2"
+            >
+              <p className="section-label mb-4">Since 2020</p>
+              <h2 className="font-serif text-2xl md:text-4xl mb-4 md:mb-6">
+                Our <span className="text-gold italic">Story</span>
               </h2>
-              <div className="space-y-3 md:space-y-4 text-gray-400 text-sm md:text-base">
+              <div className="space-y-4 text-muted text-sm md:text-base leading-relaxed">
                 <p>
-                  Founded by award-winning photographer Jane Doe, LensCraft began as a small studio with big dreams. What started as a passion project has grown into one of the most sought-after photography studios in the region.
+                  Dhansu Photography began as a small studio with a clear vision: to capture real emotion with cinematic craft. What started as a passion project has grown into a trusted photography studio across weddings, portraits, and commercial work.
                 </p>
                 <p>
-                  We believe every moment has a story worth telling. Whether it's the nervous excitement before the wedding vows, the quiet connection between loved ones, or the proud showcase of a business products - we capture the essence that makes each moment unique.
+                  We believe every moment has a story worth telling. Whether it is the nervous excitement before wedding vows, the quiet connection between loved ones, or the proud showcase of a business — we capture the essence that makes each moment unique.
                 </p>
                 <p>
-                  Over the years, we've had the privilege of working with thousands of clients, from celebrity weddings to small intimate gatherings, from global brands to local businesses. Each project receives the same level of dedication and artistic attention.
+                  Over the years, we have had the privilege of working with thousands of clients, from grand celebrations to intimate gatherings. Each project receives the same level of dedication and artistic attention.
                 </p>
               </div>
-            </div>
-          </motion.div>
-        </section> */}
-<section id="story" className="mb-16 md:mb-20">
-  <motion.div
-    initial={{ opacity: 0 }}
-    whileInView={{ opacity: 1 }}
-    transition={{ duration: 0.8 }}
-    viewport={{ once: true }}
-    className="flex flex-col lg:flex-row gap-8 md:gap-12 items-center"
-  >
-    <div className="w-full lg:w-1/2 relative order-2 lg:order-1 mt-8 lg:mt-0">
-      <div className="relative aspect-square md:aspect-video lg:aspect-video rounded-xl overflow-hidden">
-        <Image
-          src="/street/1710671175604.jpg"
-          alt="Our studio"
-          fill
-          className="object-cover"
-          sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw"
-          priority={false}
-        />
-      </div>
-      <div className="absolute -bottom-3 -left-3 md:-bottom-4 md:-left-4 lg:-bottom-6 lg:-left-6 bg-gray-900 border border-gray-800 p-2 md:p-3 lg:p-4 rounded-xl w-2/3 md:w-1/2 z-10">
-        <p className="text-white font-medium text-xs md:text-sm">Our state-of-the-art studio in New York</p>
-      </div>
-    </div>
-    <div className="w-full lg:w-1/2 order-1 lg:order-2">
-      <h2 className="text-2xl md:text-3xl lg:text-4xl font-bold mb-4 md:mb-6">
-        Our <span className="text-gray-400">Story</span>
-      </h2>
-      <div className="space-y-3 md:space-y-4 text-gray-400 text-sm md:text-base">
-        <p>
-          Founded by award-winning photographer Jane Doe, LensCraft began as a small studio with big dreams. What started as a passion project has grown into one of the most sought-after photography studios in the region.
-        </p>
-        <p>
-          We believe every moment has a story worth telling. Whether it is the nervous excitement before the wedding vows, the quiet connection between loved ones, or the proud showcase of a business products - we capture the essence that makes each moment unique.
-        </p>
-        <p>
-          Over the years, we have had the privilege of working with thousands of clients, from celebrity weddings to small intimate gatherings, from global brands to local businesses. Each project receives the same level of dedication and artistic attention.
-        </p>
-      </div>
-    </div>
-  </motion.div>
-</section>
-        {/* Our Approach Section */}
-        <section id="approach" className="mb-16 md:mb-20">
-          <motion.div
-            initial={{ opacity: 0 }}
-            whileInView={{ opacity: 1 }}
-            transition={{ duration: 0.8 }}
-            viewport={{ once: true }}
-            className="text-center mb-8 md:mb-12"
-          >
-            <h2 className="text-2xl md:text-3xl lg:text-4xl font-bold mb-3 md:mb-4">
-              Our <span className="text-gray-400">Approach</span>
-            </h2>
-            <p className="text-gray-400 max-w-3xl mx-auto text-sm md:text-base px-4">
-              We combine technical expertise with artistic vision to create images that stand the test of time
-            </p>
-          </motion.div>
+            </motion.div>
+          </div>
+        </section>
+
+        <section id="approach" className="mb-16 md:mb-24 scroll-mt-28">
+          <SectionHeader
+            eyebrow="How We Work"
+            title="Our"
+            highlight="Approach"
+            subtitle="We combine technical expertise with artistic vision to create images that stand the test of time"
+          />
 
           <div className="grid grid-cols-1 md:grid-cols-2 gap-6 md:gap-8">
             <motion.div
-              initial={{ opacity: 0, y: 20 }}
+              initial={{ opacity: 0, y: 32 }}
               whileInView={{ opacity: 1, y: 0 }}
-              transition={{ duration: 0.5 }}
+              transition={{ duration: 0.55, ease }}
               viewport={{ once: true }}
-              className="bg-gray-900/50 border border-gray-800 rounded-xl p-6 md:p-8"
+              className={`${cardClass} p-6 md:p-8`}
             >
-              <h3 className="text-lg md:text-xl font-bold text-white mb-3 md:mb-4">The Dhansu Photography Philosophy</h3>
-              <ul className="space-y-3 md:space-y-4 text-gray-400 text-sm md:text-base">
-                <li className="flex items-start">
-                  <span className="text-white mr-2">•</span>
-                  <span>Authenticity over perfection - we capture real moments and emotions</span>
-                </li>
-                <li className="flex items-start">
-                  <span className="text-white mr-2">•</span>
-                  <span>Every client receives personalized attention and customized solutions</span>
-                </li>
-                <li className="flex items-start">
-                  <span className="text-white mr-2">•</span>
-                  <span>We invest in the highest quality equipment and continuous education</span>
-                </li>
-                <li className="flex items-start">
-                  <span className="text-white mr-2">•</span>
-                  <span>Ethical business practices with transparent pricing</span>
-                </li>
+              <GoldLine />
+              <div className="flex items-start justify-between mb-6">
+                <IconBadge>
+                  <FaComments className="text-xl" />
+                </IconBadge>
+                <span className="font-serif text-muted/50 text-sm">01</span>
+              </div>
+              <h3 className="font-serif text-2xl text-text mb-6">The Dhansu Philosophy</h3>
+              <ul className="space-y-4">
+                {philosophy.map((item, i) => (
+                  <motion.li
+                    key={item}
+                    initial={{ opacity: 0, x: -10 }}
+                    whileInView={{ opacity: 1, x: 0 }}
+                    viewport={{ once: true }}
+                    transition={{ delay: 0.12 + i * 0.08, duration: 0.4, ease }}
+                    className="flex items-start text-sm md:text-base"
+                  >
+                    <FaCheck className="text-gold mt-1 mr-3 shrink-0 text-xs" />
+                    <span className="text-muted">{item}</span>
+                  </motion.li>
+                ))}
               </ul>
             </motion.div>
 
             <motion.div
-              initial={{ opacity: 0, y: 20 }}
+              initial={{ opacity: 0, y: 32 }}
               whileInView={{ opacity: 1, y: 0 }}
-              transition={{ duration: 0.5, delay: 0.2 }}
+              transition={{ duration: 0.55, delay: 0.12, ease }}
               viewport={{ once: true }}
-              className="bg-gray-900/50 border border-gray-800 rounded-xl p-6 md:p-8"
+              className={`${cardClass} p-6 md:p-8`}
             >
-              <h3 className="text-lg md:text-xl font-bold text-white mb-3 md:mb-4">The Process</h3>
-              <ol className="space-y-4 md:space-y-6 text-gray-400 text-sm md:text-base">
-                <li className="flex items-start">
-                  <span className="text-white font-medium mr-3">1.</span>
-                  <span>Consultation - We listen to understand your vision and needs</span>
-                </li>
-                <li className="flex items-start">
-                  <span className="text-white font-medium mr-3">2.</span>
-                  <span>Planning - Location scouting, styling, and timeline creation</span>
-                </li>
-                <li className="flex items-start">
-                  <span className="text-white font-medium mr-3">3.</span>
-                  <span>Shoot Day - Relaxed, professional session tailored to you</span>
-                </li>
-                <li className="flex items-start">
-                  <span className="text-white font-medium mr-3">4.</span>
-                  <span>Delivery - Carefully edited images delivered in your preferred format</span>
-                </li>
+              <GoldLine />
+              <div className="flex items-start justify-between mb-6">
+                <IconBadge>
+                  <FaClipboardList className="text-xl" />
+                </IconBadge>
+                <span className="font-serif text-muted/50 text-sm">02</span>
+              </div>
+              <h3 className="font-serif text-2xl text-text mb-6">The Process</h3>
+              <ol className="space-y-5">
+                {process.map((item, i) => (
+                  <motion.li
+                    key={item.title}
+                    initial={{ opacity: 0, x: -10 }}
+                    whileInView={{ opacity: 1, x: 0 }}
+                    viewport={{ once: true }}
+                    transition={{ delay: 0.2 + i * 0.08, duration: 0.4, ease }}
+                    className="flex items-start gap-4"
+                  >
+                    <span className="font-serif text-gold text-lg w-7 shrink-0">0{i + 1}</span>
+                    <div>
+                      <p className="text-text font-medium text-sm md:text-base">{item.title}</p>
+                      <p className="text-muted text-sm mt-0.5">{item.text}</p>
+                    </div>
+                  </motion.li>
+                ))}
               </ol>
             </motion.div>
           </div>
         </section>
 
-        {/* Services Overview */}
-        <section className="mb-16 md:mb-20">
-          <motion.div
-            initial={{ opacity: 0 }}
-            whileInView={{ opacity: 1 }}
-            transition={{ duration: 0.8 }}
-            viewport={{ once: true }}
-            className="text-center mb-8 md:mb-12"
-          >
-            <h2 className="text-2xl md:text-3xl lg:text-4xl font-bold mb-3 md:mb-4">
-              Our <span className="text-gray-400">Specializations</span>
-            </h2>
-            <p className="text-gray-400 max-w-3xl mx-auto text-sm md:text-base px-4">
-              While we are versatile in many photography styles, these are our core specialties
-            </p>
-          </motion.div>
+        <section className="mb-16 md:mb-24">
+          <SectionHeader
+            eyebrow="Expertise"
+            title="Our"
+            highlight="Specializations"
+            subtitle="While we are versatile in many photography styles, these are our core specialties"
+          />
 
           <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4 md:gap-6">
-            {services.map((service, index) => (
+            {specialties.map((service, index) => (
               <motion.div
-                key={index}
-                initial={{ opacity: 0, y: 20 }}
+                key={service.title}
+                initial={{ opacity: 0, y: 32 }}
                 whileInView={{ opacity: 1, y: 0 }}
-                transition={{ delay: index * 0.1, duration: 0.5 }}
+                transition={{ delay: index * 0.1, duration: 0.55, ease }}
                 viewport={{ once: true }}
-                whileHover={{ y: -10 }}
-                className="bg-gray-900 border border-gray-800 rounded-xl p-4 md:p-6 hover:border-gray-600 transition-all"
+                className={`${cardClass} p-6 md:p-7 flex flex-col`}
               >
-                <h3 className="text-lg md:text-xl font-bold text-white mb-2 md:mb-3">{service.title}</h3>
-                <p className="text-gray-400 text-xs md:text-sm">{service.description}</p>
+                <GoldLine />
+                <div className="flex items-start justify-between mb-5">
+                  <IconBadge>{service.icon}</IconBadge>
+                  <span className="font-serif text-muted/50 text-sm">0{index + 1}</span>
+                </div>
+                <h3 className="font-serif text-xl text-text mb-3">{service.title}</h3>
+                <p className="text-muted text-sm leading-relaxed flex-1">{service.description}</p>
               </motion.div>
             ))}
           </div>
         </section>
 
-        {/* Team CTA */}
-        <section className="bg-gradient-to-r from-gray-900 to-gray-800 rounded-xl p-6 md:p-8 lg:p-12 text-center">
-          <motion.div
-            initial={{ opacity: 0, scale: 0.9 }}
-            whileInView={{ opacity: 1, scale: 1 }}
-            transition={{ duration: 0.6 }}
-            viewport={{ once: true }}
-          >
-            <h2 className="text-2xl md:text-3xl lg:text-4xl font-bold mb-4 md:mb-6">
-              Ready to <span className="text-gray-400">Create</span> Together?
-            </h2>
-            <p className="text-gray-400 max-w-2xl mx-auto mb-6 md:mb-8 text-sm md:text-base">
-              Whether you are planning a wedding, need commercial photography, or want a personal portrait session, we did love to hear about your vision.
-            </p>
-            <motion.div whileHover={{ scale: 1.05 }} whileTap={{ scale: 0.95 }}>
-              <a
-                href="/contact"
-                className="inline-block bg-white text-black px-6 py-2.5 md:px-8 md:py-3 rounded-full font-medium transition-all hover:bg-gray-200 text-sm md:text-base"
-              >
-                Get in Touch
-              </a>
-            </motion.div>
-          </motion.div>
-        </section>
+        <motion.section
+          initial={{ opacity: 0, y: 28 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          transition={{ duration: 0.65, ease }}
+          viewport={{ once: true }}
+          className="card-gold relative overflow-hidden bg-surface/80 border rounded-2xl p-8 md:p-14 text-center"
+        >
+          <div className="pointer-events-none absolute inset-x-0 top-0 h-px bg-gradient-to-r from-transparent via-gold/70 to-transparent" />
+          <div className="pointer-events-none absolute -top-24 left-1/2 h-48 w-96 -translate-x-1/2 rounded-full bg-gold/10 blur-3xl" />
+          <h2 className="font-serif text-3xl md:text-5xl mb-4 relative">
+            Ready to <span className="text-gold italic">Create</span> Together?
+          </h2>
+          <p className="text-muted max-w-2xl mx-auto mb-8 relative">
+            Whether you are planning a wedding, need commercial photography, or want a personal portrait session, we would love to hear about your vision.
+          </p>
+          <div className="relative flex flex-col sm:flex-row justify-center items-center gap-4">
+            <Button href="/contact">Get in Touch</Button>
+            <Button href="/portfolio" variant="outline">
+              View Portfolio
+            </Button>
+          </div>
+        </motion.section>
       </div>
     </div>
   )
